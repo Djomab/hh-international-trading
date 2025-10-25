@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin H&H Trading</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: "git-gateway",
+          branch: "main",
+        },
+        local_backend: true, // Pour tester en local
+        media_folder: "public/images/uploads",
+        public_folder: "/images/uploads",
+        collections: [
+          {
+            name: "hero",
+            label: "Hero Section",
+            files: [
+              {
+                name: "hero",
+                label: "Hero Content",
+                file: "content/hero.md",
+                fields: [
+                  { label: "Titre", name: "title", widget: "string" },
+                  { label: "Sous-titre", name: "subtitle", widget: "string" },
+                  { label: "Texte d'accueil", name: "welcome_text", widget: "markdown" },
+                  { label: "Texte du bouton", name: "button_text", widget: "string" }
+                ]
+              }
+            ]
+          },
+          {
+            name: "solutions",
+            label: "Solutions",
+            folder: "content/solutions",
+            create: true,
+            slug: "{{slug}}",
+            fields: [
+              { label: "Titre", name: "title", widget: "string" },
+              { label: "Description", name: "description", widget: "text" },
+              { label: "Icône", name: "icon", widget: "string" },
+              { 
+                label: "Caractéristiques", 
+                name: "features", 
+                widget: "list", 
+                fields: [{ label: "Caractéristique", name: "feature", widget: "string" }] 
+              }
+            ]
+          },
+          {
+            name: "testimonials",
+            label: "Témoignages",
+            folder: "content/testimonials",
+            create: true,
+            slug: "{{slug}}",
+            fields: [
+              { label: "Auteur", name: "author", widget: "string" },
+              { label: "Entreprise", name: "company", widget: "string" },
+              { label: "Texte", name: "text", widget: "text" }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
