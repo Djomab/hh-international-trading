@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin H&H Trading</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin H&H Trading</title>
 </head>
 <body>
-    <!-- Script Decap CMS -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.3.0/dist/decap-cms.js"></script>
+  <!-- IMPORTANT : le flag doit être défini avant le chargement du script -->
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
 
-    
-    <!-- Configuration inline - UNE SEULE FOIS -->
-    <script>
-        window.CMS_MANUAL_INIT = true;
+  <!-- Script Decap CMS -->
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.3.0/dist/decap-cms.js"></script>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.CMS && !window.CMS_INITIALIZED) {
-                window.CMS_INITIALIZED = true;
-                
-                window.CMS.init({
-                    config: {
-                        backend: {
-                            name: "git-gateway",
-                            branch: "main"
-                        },
-                        media_folder: "public/images/uploads",
-                        public_folder: "/images/uploads",
-                        collections: [
-                            {
-                                name: "pages",
-                                label: "Pages",
-                                files: [
-                                    {
-                                        name: "home",
-                                        label: "Page d'Accueil",
-                                        file: "content/home.md",
-                                        fields: [
-                                            { label: "Titre", name: "title", widget: "string" },
-                                            { label: "Sous-titre", name: "subtitle", widget: "string" },
-                                            { label: "Contenu", name: "body", widget: "markdown" }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                });
-                
-                console.log('Decap CMS initialisé');
-            }
+  <!-- Configuration inline -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.CMS && !window.CMS_INITIALIZED) {
+        window.CMS_INITIALIZED = true;
+
+        window.CMS.init({
+          config: {
+            backend: {
+              name: "git-gateway",
+              branch: "main"
+            },
+            media_folder: "public/images/uploads",
+            public_folder: "/images/uploads",
+            collections: [
+              {
+                name: "pages",
+                label: "Pages",
+                files: [
+                  {
+                    name: "home",
+                    label: "Page d'Accueil",
+                    file: "content/home.md",
+                    fields: [
+                      { label: "Titre", name: "title", widget: "string" },
+                      { label: "Sous-titre", name: "subtitle", widget: "string" },
+                      { label: "Contenu", name: "body", widget: "markdown" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         });
-    </script>
+
+        console.log('✅ Decap CMS initialisé proprement');
+      }
+    });
+  </script>
 </body>
 </html>
