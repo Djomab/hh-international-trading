@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin H&H Trading</title>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        CMS.init({
+            config: {
+                backend: {
+                    name: "git-gateway",
+                    branch: "main",
+                },
+                local_backend: false,
+                media_folder: "public/images/uploads",
+                public_folder: "/images/uploads",
+                collections: [
+                    {
+                        name: "hero",
+                        label: "Hero Section",
+                        files: [
+                            {
+                                name: "hero",
+                                label: "Contenu Principal",
+                                file: "content/hero.md",
+                                fields: [
+                                    { 
+                                        label: "Titre Principal", 
+                                        name: "title", 
+                                        widget: "string",
+                                        default: "H&H – International Trading"
+                                    },
+                                    { 
+                                        label: "Sous-titre", 
+                                        name: "subtitle", 
+                                        widget: "string",
+                                        default: "Acting For A Smart Future"
+                                    },
+                                    { 
+                                        label: "Texte d'Accueil", 
+                                        name: "welcome_text", 
+                                        widget: "markdown",
+                                        default: "**Chers partenaires et clients,**\n\nHistoriquement concentrés sur la sous-traitance commerciale, nous sommes fiers d'annoncer notre décision stratégique de nous positionner directement sur le marché chypriote en 2024.\n\nCette transition marque une nouvelle ère pour H&H-IT, nous permettant de renforcer notre compétitivité et de mieux répondre à vos besoins diversifiés."
+                                    },
+                                    { 
+                                        label: "Texte du Bouton", 
+                                        name: "button_text", 
+                                        widget: "string",
+                                        default: "Découvrir nos solutions"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "solutions",
+                        label: "Solutions",
+                        folder: "content/solutions",
+                        create: true,
+                        slug: "{{slug}}",
+                        fields: [
+                            { label: "Titre", name: "title", widget: "string" },
+                            { label: "Description", name: "description", widget: "text" },
+                            { 
+                                label: "Icône", 
+                                name: "icon", 
+                                widget: "select",
+                                options: [
+                                    { label: "Station de recharge", value: "charging-station" },
+                                    { label: "Réseau", value: "network-wired" },
+                                    { label: "Panneau solaire", value: "solar-panel" },
+                                    { label: "Boîte", value: "box" },
+                                    { label: "Industrie", value: "industry" },
+                                    { label: "Bâtiment", value: "building" }
+                                ],
+                                default: "charging-station"
+                            },
+                            { 
+                                label: "Caractéristiques", 
+                                name: "features", 
+                                widget: "list", 
+                                fields: [
+                                    { 
+                                        label: "Caractéristique", 
+                                        name: "feature", 
+                                        widget: "string" 
+                                    }
+                                ] 
+                            }
+                        ]
+                    },
+                    {
+                        name: "testimonials",
+                        label: "Témoignages",
+                        folder: "content/testimonials",
+                        create: true,
+                        slug: "{{slug}}",
+                        fields: [
+                            { label: "Auteur", name: "author", widget: "string" },
+                            { label: "Entreprise/Fonction", name: "company", widget: "string" },
+                            { label: "Texte du témoignage", name: "text", widget: "text" }
+                        ]
+                    }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
