@@ -1,27 +1,22 @@
 [build]
   publish = "public"
 
+# Redirections simples
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
 
-[[redirects]]
-  from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+# DÉSACTIVER CSP pour l'admin (critique)
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'"
 
-# Headers de sécurité pour le site principal
+# Sécurité normale pour le reste du site
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Headers spécifiques pour l'admin avec CSP assouplie
-[[headers]]
-  for = "/admin/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self' https://unpkg.com; connect-src 'self' https://api.github.com https://unpkg.com; img-src 'self' data: https:;"
