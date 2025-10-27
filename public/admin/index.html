@@ -9,14 +9,14 @@
     <!-- Script Decap CMS -->
     <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
-    <!-- Configuration inline -->
+    <!-- Configuration inline - UNE SEULE FOIS -->
     <script>
-        // Désactiver l'auto-init
         window.CMS_MANUAL_INIT = true;
 
-        // Attendre que le CMS soit chargé
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.CMS) {
+            if (window.CMS && !window.CMS_INITIALIZED) {
+                window.CMS_INITIALIZED = true;
+                
                 window.CMS.init({
                     config: {
                         backend: {
@@ -45,6 +45,8 @@
                         ]
                     }
                 });
+                
+                console.log('Decap CMS initialisé');
             }
         });
     </script>
