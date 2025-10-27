@@ -1,13 +1,19 @@
 [build]
   publish = "public"
+  command = "mkdir -p public"  # Assure que public existe
 
 # Configuration Identity pour Git Gateway
 [build.environment]
   NODE_VERSION = "18"
 
-# Redirection pour l'admin - IMPORTANT: pas de wildcard ici
+# Redirections pour l'admin
 [[redirects]]
   from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin/"
   to = "/admin/index.html"
   status = 200
 
