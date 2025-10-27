@@ -1,24 +1,330 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>H&H Trading - Test</title>
-    <style>
-        body { font-family: Arial; padding: 20px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&H - International Trading | Acting For A Smart Future</title>
+    
+    <!-- CSS External -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Test H&H Trading</h1>
-    <p>Si cette page s'affiche, le problème vient du JavaScript.</p>
-    
-    <h2>Fichiers chargés :</h2>
-    <ul>
-        <li><a href="/css/app.css">CSS</a></li>
-        <li><a href="/js/app.js">JS</a></li>
-        <li><a href="/admin">Admin</a></li>
-    </ul>
-    
-    <script>
-        console.log('Test JS fonctionnel');
-    </script>
+    <!-- Admin Link (discret) -->
+    <a href="/admin" class="admin-link" title="Administration">
+        <i class="fas fa-cog"></i> Admin
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                H&H-IT
+                <small>ACTING FOR A SMART FUTURE</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 hero-content">
+                    <h1>H&H – International Trading</h1>
+                    <p class="tagline">Acting For A Smart Future</p>
+                    <div class="hero-text">
+                        <p class="mb-4"><strong>Chers partenaires et clients,</strong></p>
+                        <p>Historiquement concentrés sur la sous-traitance commerciale, nous sommes fiers d'annoncer notre décision stratégique de nous positionner directement sur le marché chypriote en 2024.</p>
+                        <p class="mb-4">Cette transition marque une nouvelle ère pour H&H-IT, nous permettant de renforcer notre compétitivité et de mieux répondre à vos besoins diversifiés.</p>
+                        <a href="#solutions" class="btn-corporate">Découvrir nos solutions <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experts à Votre Service</h2>
+                <p>Des compétences élargies pour répondre à tous vos besoins</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3 class="mb-4" style="color: var(--primary-blue);">Nos Domaines d'Expertise</h3>
+                    <ul class="expertise-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Études et réalisation en projets MEP</strong> (Mécanique, Électrique & Plomberie)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Études et Fournitures</strong> en Éclairage Solaire, Urbain et Industriel</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Vente de Solutions Courant Fort :</strong> Poste de transformation, Groupe électrogène, Onduleurs, Paratonnerre</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Vente de Solutions Courant Faible :</strong> Réseaux informatiques, Data center, Détection incendie, Vidéosurveillance, Contrôle d'accès</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Vente de Solutions Éco-énergétiques :</strong> Smart Solution, Audit-expertise, Relamping, Solutions Solaires</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Vente d'outils de sécurité</strong> et équipements de protection individuelle</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Vente de Construction Modulaire :</strong> Salle de contrôle, Logement, Bureau de chantier, Fabrication spéciale</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="solution-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <p class="lead text-center" style="color: var(--primary-blue); font-weight: 600; font-style: italic;">
+                        "Un partenaire est un choix stratégique dans la vie d'une entreprise"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Nouvelle Ère</div>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Domaines d'Expertise</div>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Solutions Personnalisées</div>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions-section fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Solutions</h2>
+                <p>Des technologies de pointe pour votre entreprise</p>
+            </div>
+
+            <!-- Solution 1: Bornes de Recharge -->
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="solution-image">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <i class="fas fa-charging-station"></i>
+                        </div>
+                        <h3>Bornes de Recharge Électrique</h3>
+                        <p>Solutions complètes pour l'infrastructure de recharge des véhicules électriques, adaptées aux besoins résidentiels, commerciaux et industriels.</p>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Installation et configuration professionnelle</li>
+                            <li><i class="fas fa-chevron-right"></i> Maintenance préventive et corrective</li>
+                            <li><i class="fas fa-chevron-right"></i> Solutions de gestion intelligente</li>
+                            <li><i class="fas fa-chevron-right"></i> Conformité aux normes internationales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 2: Smart Grid -->
+            <div class="row mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="solution-image">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Comptage, Monitoring & Smart Grid</h3>
+                        <p>Systèmes intelligents pour la gestion et le contrôle de vos réseaux électriques avec une efficacité optimale.</p>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> SCADA - Réseau numérique HT & BT</li>
+                            <li><i class="fas fa-chevron-right"></i> Smart Metering - Comptage intelligent</li>
+                            <li><i class="fas fa-chevron-right"></i> Smart Pre-Payment - Prépaiement intelligent</li>
+                            <li><i class="fas fa-chevron-right"></i> Elumia - Éclairage intelligent</li>
+                            <li><i class="fas fa-chevron-right"></i> Monitoring pour bâtiments et éclairage urbain</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 3: Solutions Solaires -->
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="solution-image">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <h3>Solutions Solaires</h3>
+                        <p>Étude, fourniture, mise en œuvre et maintenance de systèmes d'énergie solaire pour une indépendance énergétique durable.</p>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Kit Solaire Hybride - Solutions complètes</li>
+                            <li><i class="fas fa-chevron-right"></i> Tour d'éclairage solaire autonome</li>
+                            <li><i class="fas fa-chevron-right"></i> Luminaires solaires haute performance</li>
+                            <li><i class="fas fa-chevron-right"></i> Installation et commissioning</li>
+                            <li><i class="fas fa-chevron-right"></i> Maintenance et suivi de performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 4: Armoires Électriques -->
+            <div class="row mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="solution-image">
+                        <i class="fas fa-box"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3>Armoires de Distribution Électrique</h3>
+                        <p>Fourniture d'armoires électriques câblées jusqu'à 6300A avec étude complète et emballage export.</p>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Conception et étude technique complète</li>
+                            <li><i class="fas fa-chevron-right"></i> Armoires jusqu'à 6300 Ampères</li>
+                            <li><i class="fas fa-chevron-right"></i> Distribution basse et moyenne tension</li>
+                            <li><i class="fas fa-chevron-right"></i> Emballage sécurisé pour export</li>
+                            <li><i class="fas fa-chevron-right"></i> Conformité aux normes IEC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 5: Armoires Industrielles -->
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="solution-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="solution-card">
+                        <div class="solution-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h3>Armoires Industrielles</h3>
+                        <p>Solutions industrielles complètes pour l'automatisation, le contrôle et l'alimentation de vos installations.</p>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Armoires Okken débrochables</li>
+                            <li><i class="fas fa-chevron-right"></i> Systèmes d'automatisme et de contrôle</li>
+                            <li><i class="fas fa-chevron-right"></i> Redresseurs industriels</li>
+                            <li><i class="fas fa-chevron-right"></i> Chargeurs de batterie haute capacité</li>
+                            <li><i class="fas fa-chevron-right"></i> Maintenance et support technique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="solutions-section fade-in" style="background: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-Nous</h2>
+                <p>Notre équipe est prête à répondre à vos besoins</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="solution-card text-center">
+                        <h3 class="mb-4">Prêt à Commencer ?</h3>
+                        <p class="mb-4">Pour tout besoin en études, expertise, fournitures ou maintenance, n'hésitez pas à contacter notre équipe dédiée.</p>
+                        <div class="mb-4">
+                            <a href="mailto:export@hh-it.eu" class="btn-corporate">
+                                <i class="fas fa-envelope me-2"></i> export@hh-it.eu
+                            </a>
+                        </div>
+                        <p class="text-muted">Nous sommes prêts à relever de nouveaux défis et à vous offrir des services de qualité exceptionnelle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>H&H International Trading</h5>
+                    <p>Acting For A Smart Future</p>
+                    <p>Solutions complètes en ingénierie électrique, énergies renouvelables et technologies intelligentes.</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Liens Rapides</h5>
+                    <ul>
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">À Propos</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-envelope me-2"></i> export@hh-it.eu</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-center mb-0" style="opacity: 0.7;">&copy; 2024 H&H International Trading. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
