@@ -1,7 +1,6 @@
 [build]
   publish = "public"
 
-# Redirections pour l'admin
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
@@ -12,7 +11,7 @@
   to = "/admin/index.html"
   status = 200
 
-# Headers de sécurité
+# Headers de sécurité pour le site principal
 [[headers]]
   for = "/*"
   [headers.values]
@@ -21,8 +20,8 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Headers spécifiques pour l'admin
+# Headers spécifiques pour l'admin avec CSP assouplie
 [[headers]]
   for = "/admin/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; font-src 'self' https://unpkg.com; connect-src 'self' https://api.github.com https://unpkg.com; img-src 'self' data: https:;"
