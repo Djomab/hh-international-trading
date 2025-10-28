@@ -1,30 +1,24 @@
+# /admin/config.yml
+
 backend:
-  name: git-gateway
-  branch: main
-  commit_messages:
-    create: "Créer {{collection}} “{{slug}}”"
-    update: "Mettre à jour {{collection}} “{{slug}}”"
-    delete: "Supprimer {{collection}} “{{slug}}”"
-    uploadMedia: "Ajouter une image “{{path}}”"
-    deleteMedia: "Supprimer une image “{{path}}”"
+  name: github
+  repo: Djomab/hh-international-trading   # <-- remplace par ton dépôt GitHub
+  branch: master                                    # ou la branche que tu utilises
+  base_url: https://api.netlify.com                # requis selon la configuration GitHub via Netlify :contentReference[oaicite:1]{index=1}
+  auth_endpoint: auth                              # endpoint d’authentification pour GitHub backend :contentReference[oaicite:2]{index=2}
 
-# URL de ton site (remplace par ton vrai domaine Netlify ou personnalisé)
-site_url: https://hh-it.eu
+site_url: https://hh-it.eu                   # <-- remplace par ton domaine personnalisé
 
-# Dossier où les fichiers média (images, etc.) sont enregistrés
 media_folder: "public/images/uploads"
-# Dossier public accessible par le site
 public_folder: "/images/uploads"
 
-# Interface française et meilleure expérience dans l'admin
-local_backend: true
-locale: 'fr'
+locale: "fr"
 
 collections:
   - name: "pages"
     label: "Pages"
     label_singular: "Page"
-    description: "Contenu des différentes pages de ton site"
+    description: "Contenu des différentes pages de votre site"
     files:
       - name: "home"
         label: "Page d’Accueil"
