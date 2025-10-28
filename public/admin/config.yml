@@ -1,18 +1,35 @@
 backend:
   name: git-gateway
   branch: main
+  commit_messages:
+    create: "Créer {{collection}} “{{slug}}”"
+    update: "Mettre à jour {{collection}} “{{slug}}”"
+    delete: "Supprimer {{collection}} “{{slug}}”"
+    uploadMedia: "Ajouter une image “{{path}}”"
+    deleteMedia: "Supprimer une image “{{path}}”"
 
+# URL de ton site (remplace par ton vrai domaine Netlify ou personnalisé)
+site_url: https://hh-it.eu
+
+# Dossier où les fichiers média (images, etc.) sont enregistrés
 media_folder: "public/images/uploads"
+# Dossier public accessible par le site
 public_folder: "/images/uploads"
+
+# Interface française et meilleure expérience dans l'admin
+local_backend: true
+locale: 'fr'
 
 collections:
   - name: "pages"
     label: "Pages"
+    label_singular: "Page"
+    description: "Contenu des différentes pages de ton site"
     files:
       - name: "home"
-        label: "Page d'Accueil"
+        label: "Page d’Accueil"
         file: "content/home.md"
         fields:
-          - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Sous-titre", name: "subtitle", widget: "string" }
-          - { label: "Contenu", name: "body", widget: "markdown" }
+          - { label: "Titre", name: "title", widget: "string", hint: "Titre principal affiché sur la page d’accueil" }
+          - { label: "Sous-titre", name: "subtitle", widget: "string", required: false }
+          - { label: "Contenu", name: "body", widget: "markdown", hint: "Texte principal de la page" }
