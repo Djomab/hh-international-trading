@@ -10,15 +10,26 @@ public_folder: "/images/uploads"
 locale: "fr"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    label_singular: "Page"
-    description: "Contenu des différentes pages de votre site"
+  # Hero Section
+  - name: "hero"
+    label: "Page d'accueil - Hero"
     files:
-      - name: "home"
-        label: "Page d'Accueil"
-        file: "content/home.md"
+      - name: "hero"
+        label: "Section Hero"
+        file: "content/hero.md"
         fields:
           - { label: "Titre", name: "title", widget: "string" }
-          - { label: "Sous-titre", name: "subtitle", widget: "string", required: false }
+          - { label: "Sous-titre", name: "tagline", widget: "string" }
           - { label: "Contenu", name: "body", widget: "markdown" }
+
+  # Solutions
+  - name: "solutions"
+    label: "Solutions"
+    folder: "content/solutions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Icône Font Awesome", name: "icon", widget: "string", hint: "Ex: fa-charging-station" }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1 }
+      - { label: "Description", name: "body", widget: "markdown" }
