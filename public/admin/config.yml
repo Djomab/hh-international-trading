@@ -4,9 +4,8 @@ backend:
   name: github
   repo: Djomab/hh-international-trading
   branch: master
-  site_domain: hh-it.netlify.app
   base_url: https://hh-it.netlify.app
-  auth_endpoint: /admin/
+  auth_endpoint: /.netlify/identity
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
