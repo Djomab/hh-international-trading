@@ -1,11 +1,10 @@
-# /admin/config.yml
-
 backend:
   name: github
   repo: Djomab/hh-international-trading
   branch: master
   base_url: https://hh-it.netlify.app
   auth_endpoint: /.netlify/identity
+  open_authoring: false
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -22,6 +21,6 @@ collections:
         label: "Page d’Accueil"
         file: "content/home.md"
         fields:
-          - { label: "Titre", name: "title", widget: "string", hint: "Titre principal affiché sur la page d’accueil" }
+          - { label: "Titre", name: "title", widget: "string" }
           - { label: "Sous-titre", name: "subtitle", widget: "string", required: false }
-          - { label: "Contenu", name: "body", widget: "markdown", hint: "Texte principal de la page" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
