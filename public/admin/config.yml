@@ -2,9 +2,7 @@ backend:
   name: github
   repo: Djomab/hh-international-trading
   branch: master
-  base_url: https://hh-it.netlify.app
-  auth_endpoint: /.netlify/identity
-  open_authoring: false
+  # Retire base_url et auth_endpoint - pas nécessaire avec GitHub backend
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -18,7 +16,7 @@ collections:
     description: "Contenu des différentes pages de votre site"
     files:
       - name: "home"
-        label: "Page d’Accueil"
+        label: "Page d'Accueil"
         file: "content/home.md"
         fields:
           - { label: "Titre", name: "title", widget: "string" }
