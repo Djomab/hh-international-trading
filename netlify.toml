@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "mkdir -p public"  # Assure que le dossier public existe
+  command = "mkdir -p public"  # S'assure que le dossier public existe
 
 [build.environment]
   NODE_VERSION = "18"
@@ -16,17 +16,12 @@
   to = "/admin/index.html"
   status = 200
 
-# --- 🪪 Redirections pour Netlify Identity ---
+# --- 🔐 Redirection pour GitHub OAuth ---
+# Cette route permettra à Decap CMS de rediriger vers GitHub pour l'authentification
 [[redirects]]
-  from = "/.netlify/identity/confirm"
-  to = "/admin/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/.netlify/identity/confirmation"
-  to = "/admin/"
-  status = 302
+  from = "/api/auth"
+  to = "https://github.com/login/oauth/authorize"
+  status = 200
   force = true
 
 # --- 🧱 En-têtes de sécurité ---

@@ -2,13 +2,11 @@
 
 backend:
   name: github
-  repo: Djomab/hh-international-trading   # <-- remplace par ton dépôt GitHub
-  branch: master                                    # ou la branche que tu utilises
-  base_url: https://hh-it.eu              # requis selon la configuration GitHub via Netlify :contentReference[oaicite:1]{index=1}
-  auth_endpoint: callback                              # endpoint d’authentification pour GitHub backend :contentReference[oaicite:2]{index=2}
-  site_domain: hh-it.eu/
-
-site_url: https://hh-it.eu                   # <-- remplace par ton domaine personnalisé
+  repo: codalec/hh-website    # ⚠️ remplace par ton vrai dépôt GitHub
+  branch: master
+  site_domain: hh-it.eu
+  base_url: https://hh-it.eu
+  auth_endpoint: /admin/
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
