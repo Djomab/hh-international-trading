@@ -2,10 +2,10 @@
 
 backend:
   name: github
-  repo: codalec/hh-website    # ⚠️ remplace par ton vrai dépôt GitHub
+  repo: Djomab/hh-international-trading
   branch: master
-  site_domain: hh-it.eu
-  base_url: https://hh-it.eu
+  site_domain: hh-it.netlify.app
+  base_url: https://hh-it.netlify.app
   auth_endpoint: /admin/
 
 media_folder: "public/images/uploads"
