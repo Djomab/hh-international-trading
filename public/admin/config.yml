@@ -4,8 +4,13 @@ backend:
   name: github
   repo: Djomab/hh-international-trading   # <-- remplace par ton dépôt GitHub
   branch: master                                    # ou la branche que tu utilises
-  base_url: https://decap-cms-oauth.vercel.app                # requis selon la configuration GitHub via Netlify :contentReference[oaicite:1]{index=1}
-  auth_endpoint: callback                              # endpoint d’authentification pour GitHub backend :contentReference[oaicite:2]{index=2}
+  base_url: https://auth.decapcms.app
+  auth_type: auth0
+  app_id: PRV0qZMD8yUuFTvchyp6Si0hhSR7LURP
+  auth_endpoint: /callback
+  site_domain: hh-it.eu/
+  auth_config:
+    domain: dev-3vuzcdx2xuxaw7jz.eu.auth0.com
 
 site_url: https://hh-it.eu                   # <-- remplace par ton domaine personnalisé
 
