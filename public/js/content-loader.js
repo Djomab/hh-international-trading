@@ -26,6 +26,7 @@ async function loadHeroContent() {
 }
 
 // Parse le front matter YAML
+// Parse le front matter YAML (version améliorée)
 function parseFrontMatter(content) {
     const regex = /^---\n([\s\S]*?)\n---/;
     const match = content.match(regex);
@@ -38,33 +39,31 @@ function parseFrontMatter(content) {
     const frontMatterText = match[1];
     const data = {};
     
-    // Parser ligne par ligne
+    // Parser ligne par ligne avec regex plus précise
     const lines = frontMatterText.split('\n');
-    let currentKey = null;
-    let currentValue = '';
     
     lines.forEach(line => {
-        // Détection d'une nouvelle clé
-        if (line.includes(':') && !line.startsWith(' ')) {
-            // Sauvegarder la clé précédente si elle existe
-            if (currentKey) {
-                data[currentKey] = cleanValue(currentValue);
-            }
-            
-            // Nouvelle clé
-            const colonIndex = line.indexOf(':');
-            currentKey = line.substring(0, colonIndex).trim();
-            currentValue = line.substring(colonIndex + 1).trim();
-        } else {
-            // Continuation de la valeur précédente
-            currentValue += ' ' + line.trim();
+        // Ignorer les lignes vides
+        if (!line.trim()) return;
+        
+        // Chercher key: value
+        const colonIndex = line.indexOf(':');
+        if (colonIndex === -1) return;
+        
+        const key = line.substring(0, colonIndex).trim();
+        let value = line.substring(colonIndex + 1).trim();
+        
+        // Enlever les guillemets si présents
+        if ((value.startsWith('"') && value.endsWith('"')) || 
+            (value.startsWith("'") && value.endsWith("'"))) {
+            value = value.slice(1, -1);
         }
+        
+        // Remplacer \n par de vrais retours à la ligne
+        value = value.replace(/\\n/g, '\n');
+        
+        data[key] = value;
     });
-    
-    // Sauvegarder la dernière clé
-    if (currentKey) {
-        data[currentKey] = cleanValue(currentValue);
-    }
     
     return data;
 }
