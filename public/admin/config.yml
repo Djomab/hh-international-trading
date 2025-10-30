@@ -16,7 +16,7 @@ collections:
     files:
       - name: "hero"
         label: "Section Hero"
-        file: "public/content/hero.md"
+        file: "content/hero.md"
         fields:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Sous-titre", name: "tagline", widget: "string" }
