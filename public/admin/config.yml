@@ -11,16 +11,47 @@ locale: "fr"
 collections:
   # Hero Section
   - name: "hero"
-    label: "Page d'accueil - Hero"
+    label: "Section Hero"
     files:
       - name: "hero"
-        label: "Section Hero"
+        label: "Page d'accueil - Hero"
         file: "content/hero.md"
         fields:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Sous-titre", name: "subtitle", widget: "string" }
           - { label: "Texte de bienvenue", name: "welcome_text", widget: "text" }
           - { label: "Texte du bouton", name: "button_text", widget: "string" }
+
+  # About Section
+  - name: "about"
+    label: "Section À Propos"
+    files:
+      - name: "about"
+        label: "À Propos"
+        file: "content/about.md"
+        fields:
+          - { label: "Titre principal", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "string" }
+          - { label: "Titre de section", name: "section_title", widget: "string" }
+          - { label: "Citation", name: "quote", widget: "string" }
+          - { label: "Liste d'expertises", name: "body", widget: "markdown" }
+
+  # Stats Section
+  - name: "stats"
+    label: "Section Statistiques"
+    files:
+      - name: "stats"
+        label: "Statistiques"
+        file: "content/stats.md"
+        fields:
+          - { label: "Stat 1 - Nombre", name: "stat1_number", widget: "string" }
+          - { label: "Stat 1 - Label", name: "stat1_label", widget: "string" }
+          - { label: "Stat 2 - Nombre", name: "stat2_number", widget: "string" }
+          - { label: "Stat 2 - Label", name: "stat2_label", widget: "string" }
+          - { label: "Stat 3 - Nombre", name: "stat3_number", widget: "string" }
+          - { label: "Stat 3 - Label", name: "stat3_label", widget: "string" }
+          - { label: "Stat 4 - Nombre", name: "stat4_number", widget: "string" }
+          - { label: "Stat 4 - Label", name: "stat4_label", widget: "string" }
 
   # Solutions
   - name: "solutions"
@@ -33,3 +64,32 @@ collections:
       - { label: "Icône Font Awesome", name: "icon", widget: "string", hint: "Ex: fa-charging-station" }
       - { label: "Ordre d'affichage", name: "order", widget: "number", default: 1 }
       - { label: "Description", name: "body", widget: "markdown" }
+
+  # Contact Section
+  - name: "contact"
+    label: "Section Contact"
+    files:
+      - name: "contact"
+        label: "Contact"
+        file: "content/contact.md"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "string" }
+          - { label: "Titre CTA", name: "cta_title", widget: "string" }
+          - { label: "Texte CTA", name: "cta_text", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Message final", name: "message", widget: "text" }
+
+  # Footer
+  - name: "footer"
+    label: "Footer"
+    files:
+      - name: "footer"
+        label: "Pied de page"
+        file: "content/footer.md"
+        fields:
+          - { label: "Nom de l'entreprise", name: "company_name", widget: "string" }
+          - { label: "Slogan", name: "tagline", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Copyright", name: "copyright", widget: "string" }

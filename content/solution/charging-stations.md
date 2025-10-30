@@ -1,10 +1,12 @@
 ---
-title: "Bornes de Recharge Électrique"
-description: "Solutions complètes pour l'infrastructure de recharge des véhicules électriques, adaptées aux besoins résidentiels, commerciaux et industriels."
-icon: "charging-station"
-features:
-  - "Installation et configuration professionnelle"
-  - "Maintenance préventive et corrective"
-  - "Solutions de gestion intelligente"
-  - "Conformité aux normes internationales"
+title: "Electric Charging Stations"
+icon: "fa-charging-station"
+order: 1
 ---
+
+Complete solutions for electric vehicle charging infrastructure, adapted to residential, commercial and industrial needs.
+
+- Professional installation and configuration
+- Preventive and corrective maintenance
+- Smart management solutions
+- Compliance with international standards

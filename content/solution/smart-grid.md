@@ -1,11 +1,13 @@
 ---
-title: "Comptage, Monitoring & Smart Grid"
-description: "Systèmes intelligents pour la gestion et le contrôle de vos réseaux électriques avec une efficacité optimale."
-icon: "network-wired"
-features:
-  - "SCADA - Réseau numérique HT & BT"
-  - "Smart Metering - Comptage intelligent"
-  - "Smart Pre-Payment - Prépaiement intelligent"
-  - "Elumia - Éclairage intelligent"
-  - "Monitoring pour bâtiments et éclairage urbain"
+title: "Metering, Monitoring & Smart Grid"
+icon: "fa-network-wired"
+order: 2
 ---
+
+Intelligent systems for managing and controlling your electrical networks with optimal efficiency.
+
+- SCADA - HV & LV digital network
+- Smart Metering - Intelligent metering
+- Smart Pre-Payment - Intelligent prepayment
+- Elumia - Intelligent lighting
+- Monitoring for buildings and street lighting

@@ -1,11 +1,13 @@
 ---
-title: "Solutions Solaires"
-description: "Étude, fourniture, mise en œuvre et maintenance de systèmes d'énergie solaire pour une indépendance énergétique durable."
-icon: "solar-panel"
-features:
-  - "Kit Solaire Hybride - Solutions complètes"
-  - "Tour d'éclairage solaire autonome"
-  - "Luminaires solaires haute performance"
-  - "Installation et commissioning"
-  - "Maintenance et suivi de performance"
+title: "Solar Solutions"
+icon: "fa-solar-panel"
+order: 3
 ---
+
+Study, supply, implementation and maintenance of solar energy systems for sustainable energy independence.
+
+- Hybrid Solar Kit - Complete solutions
+- Autonomous solar lighting tower
+- High-performance solar luminaires
+- Installation and commissioning
+- Performance maintenance and monitoring
