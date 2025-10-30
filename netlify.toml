@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "mkdir -p public && cp -r content public/
+  command = "mkdir -p public && cp -r content public/"
 
 [build.environment]
   NODE_VERSION = "18"
