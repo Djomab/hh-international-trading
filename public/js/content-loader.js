@@ -270,7 +270,7 @@ class ContentLoader {
 
         // ⭐ AFFICHE L'IMAGE SI ELLE EXISTE, SINON L'ICÔNE
         const visualContent = image 
-            ? `<img src="${image}" alt="${title}" class="solution-image-photo">`
+            ? `<img src="${image}" alt="${title}">`
             : `<i class="fas ${icon}"></i>`;
 
         return `
