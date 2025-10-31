@@ -1,6 +1,7 @@
 ---
-title: "Industrial Cabinets"
-icon: "fa-industry"
+title: Industrial Cabinets
+image: /images/uploads/industrial-control.jpg
+icon: fa-industry
 order: 5
 ---
 
