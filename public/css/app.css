@@ -279,33 +279,37 @@ body {
 }
 
 /* Image Placeholder */
+/* Solution image container (garde le style actuel) */
 .solution-image {
-    width: 100%;
-    height: 250px;
-    background: linear-gradient(135deg, #e3e8ef 0%, #c5cfd9 100%);
-    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-gold));
+    border-radius: 20px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    color: var(--medium-gray);
-    font-size: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Images des solutions */
-/*.solution-image-photo {
+/* Icône (style actuel) */
+.solution-image i {
+    font-size: 120px;
+    color: white;
+}
+
+/* Image photo - s'adapte au container */
+.solution-image-photo {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    display: block;
 }
 
-.solution-image-photo:hover {
+/* Hover effect */
+.solution-image:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}*/
+}
 
 /* Stats Section */
 .stats-section {
