@@ -279,7 +279,7 @@ body {
 }
 
 /* Image Placeholder */
-.solution-image {
+/*.solution-image {
     width: 100%;
     height: 250px;
     background: linear-gradient(135deg, #e3e8ef 0%, #c5cfd9 100%);
@@ -290,7 +290,7 @@ body {
     margin-bottom: 1.5rem;
     color: var(--medium-gray);
     font-size: 3rem;
-}
+}*/
 
 .solution-image img {
     width: 100%;
