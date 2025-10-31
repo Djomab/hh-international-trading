@@ -1,6 +1,7 @@
 ---
-title: "Electrical Distribution Cabinets"
-icon: "fa-box"
+title: Electrical Distribution Cabinets
+image: /images/uploads/electrical-cabinet.jpg
+icon: fa-box
 order: 4
 ---
 
