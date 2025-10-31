@@ -1,6 +1,7 @@
 ---
-title: "Metering, Monitoring & Smart Grid"
-icon: "fa-network-wired"
+title: Metering, Monitoring & Smart Grid
+image: /images/uploads/smart-grid.jpg
+icon: fa-network-wired
 order: 2
 ---
 
