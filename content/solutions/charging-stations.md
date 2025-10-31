@@ -1,6 +1,7 @@
 ---
-title: "Electric Charging Stations"
-icon: "fa-charging-station"
+title: Electric Charging Stations
+image: /images/uploads/charging-station.jpg
+icon: fa-charging-station
 order: 1
 image: "/images/uploads/borne-recharge.jpg"
 ---
