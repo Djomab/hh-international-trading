@@ -1,6 +1,7 @@
 ---
-title: "Solar Solutions"
-icon: "fa-solar-panel"
+title: Solar Solutions
+image: /images/uploads/solar-panels.jpg
+icon: fa-solar-panel
 order: 3
 ---
 
