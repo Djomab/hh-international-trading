@@ -293,7 +293,7 @@ body {
 }
 
 /* Images des solutions */
-.solution-image-photo {
+/*.solution-image-photo {
     width: 100%;
     height: 400px;
     object-fit: cover;
@@ -305,7 +305,7 @@ body {
 .solution-image-photo:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
+}*/
 
 /* Stats Section */
 .stats-section {
