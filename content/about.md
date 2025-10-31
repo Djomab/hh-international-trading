@@ -3,6 +3,7 @@ title: "Experts at Your Service"
 subtitle: "Expanded skills to meet all your needs"
 section_title: "Our Areas of Expertise"
 quote: "A partner is a strategic choice in a company's life"
+image: "/images/uploads/about.jpg"
 ---
 
 - **MEP Project Studies and Implementation** (Mechanical, Electrical & Plumbing)

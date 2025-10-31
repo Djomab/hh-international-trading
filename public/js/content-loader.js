@@ -133,6 +133,46 @@ class ContentLoader {
     }
 
     // Charge About
+    /*async loadAbout() {
+        const about = await this.loadMarkdown('/content/about.md');
+        if (!about) return;
+
+        const { data, content } = about;
+
+        // Titre principal
+        const titleEl = document.querySelector('#about .section-title h2');
+        if (titleEl && data.title) {
+            titleEl.textContent = data.title;
+        }
+
+        // Sous-titre
+        const subtitleEl = document.querySelector('#about .section-title p');
+        if (subtitleEl && data.subtitle) {
+            subtitleEl.textContent = data.subtitle;
+        }
+
+        // Titre de section
+        const sectionTitleEl = document.querySelector('#about h3');
+        if (sectionTitleEl && data.section_title) {
+            sectionTitleEl.textContent = data.section_title;
+        }
+
+        // Liste d'expertises
+        const listEl = document.querySelector('#about .expertise-list');
+        if (listEl && content) {
+            listEl.outerHTML = this.markdownToHtml(content);
+        }
+
+        // Citation
+        const quoteEl = document.querySelector('#about .lead');
+        if (quoteEl && data.quote) {
+            quoteEl.textContent = `"${data.quote}"`;
+        }
+
+        console.log('✅ About chargé');
+    }*/
+
+    // Charge About
     async loadAbout() {
         const about = await this.loadMarkdown('/content/about.md');
         if (!about) return;
@@ -167,6 +207,12 @@ class ContentLoader {
         const quoteEl = document.querySelector('#about .lead');
         if (quoteEl && data.quote) {
             quoteEl.textContent = `"${data.quote}"`;
+        }
+
+        // ⭐ IMAGE - Remplace l'icône par l'image si elle existe
+        const imageContainer = document.querySelector('#about .solution-image');
+        if (imageContainer && data.image) {
+            imageContainer.innerHTML = `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">`;
         }
 
         console.log('✅ About chargé');

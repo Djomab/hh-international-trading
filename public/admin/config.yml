@@ -22,7 +22,7 @@ collections:
           - { label: "Texte de bienvenue", name: "welcome_text", widget: "text" }
           - { label: "Texte du bouton", name: "button_text", widget: "string" }
 
-  # About Section
+# About Section
   - name: "about"
     label: "Section À Propos"
     files:
@@ -34,6 +34,7 @@ collections:
           - { label: "Sous-titre", name: "subtitle", widget: "string" }
           - { label: "Titre de section", name: "section_title", widget: "string" }
           - { label: "Citation", name: "quote", widget: "string" }
+          - { label: "Image", name: "image", widget: "image", required: false } 
           - { label: "Liste d'expertises", name: "body", widget: "markdown" }
 
   # Stats Section
