@@ -4,12 +4,13 @@ class ContentLoader {
         this.parser = window.marked || null;
     }
 
-    // Parse le front matter YAML
+  // Parse le front matter YAML
     parseFrontMatter(content) {
         const regex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
         const match = content.match(regex);
         
         if (!match) {
+            console.warn('⚠️ Pas de front matter trouvé');
             return { data: {}, content: content };
         }
 
@@ -36,8 +37,12 @@ class ContentLoader {
             value = value.replace(/\\n/g, '\n');
             
             data[key] = value;
+            
+            // 🔍 DEBUG
+            console.log(`  ✓ ${key}: "${value}"`);
         });
 
+        console.log('📦 Données parsées:', data);
         return { data, content: body };
     }
 
@@ -257,13 +262,22 @@ class ContentLoader {
     createSolutionHTML(solution, reversed) {
         const icon = solution.icon || 'fa-cog';
         const title = solution.title || 'Solution';
+        const image = solution.image || null;  // ⭐ RÉCUPÈRE L'IMAGE
         const html = this.markdownToHtml(solution.content || '');
+
+        // 🔍 DEBUG (optionnel, tu peux l'enlever après)
+        console.log('🖼️ Solution:', title, '| Image:', image);
+
+        // ⭐ AFFICHE L'IMAGE SI ELLE EXISTE, SINON L'ICÔNE
+        const visualContent = image 
+            ? `<img src="${image}" alt="${title}" class="solution-image-photo">`
+            : `<i class="fas ${icon}"></i>`;
 
         return `
             <div class="row mb-5">
                 <div class="col-lg-6 ${reversed ? 'order-lg-2' : ''}">
                     <div class="solution-image">
-                        <i class="fas ${icon}"></i>
+                        ${visualContent}
                     </div>
                 </div>
                 <div class="col-lg-6 ${reversed ? 'order-lg-1' : ''}">
