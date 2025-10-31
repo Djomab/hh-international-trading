@@ -3,7 +3,7 @@ title: Electric Charging Stations
 image: /images/uploads/charging-station.jpg
 icon: fa-charging-station
 order: 1
-image: "/images/uploads/borne-recharge.jpg"
+image: "/images/uploads/charging-station.jpg"
 ---
 
 Complete solutions for electric vehicle charging infrastructure, adapted to residential, commercial and industrial needs.
