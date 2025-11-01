@@ -341,38 +341,56 @@ class ContentLoader {
 
     // Charge Contact
     async loadContact() {
+        console.log('📥 Chargement Contact...');
         const contact = await this.loadMarkdown('/content/contact.md');
-        if (!contact) return;
+        
+        if (!contact) {
+            console.error('❌ contact.md non trouvé');
+            return;
+        }
 
         const { data } = contact;
+        console.log('📦 Contact data:', data);
 
+        // Titre
         const titleEl = document.querySelector('#contact .section-title h2');
+        console.log('🔍 titleEl:', titleEl, '| value:', data.title);
         if (titleEl && data.title) {
             titleEl.textContent = data.title;
         }
 
+        // Sous-titre
         const subtitleEl = document.querySelector('#contact .section-title p');
+        console.log('🔍 subtitleEl:', subtitleEl, '| value:', data.subtitle);
         if (subtitleEl && data.subtitle) {
             subtitleEl.textContent = data.subtitle;
         }
 
+        // Titre CTA
         const ctaTitleEl = document.querySelector('#contact .solution-card h3');
+        console.log('🔍 ctaTitleEl:', ctaTitleEl, '| value:', data.cta_title);
         if (ctaTitleEl && data.cta_title) {
             ctaTitleEl.textContent = data.cta_title;
         }
 
+        // Texte CTA
         const ctaTextEl = document.querySelector('#contact .solution-card > p:first-of-type');
+        console.log('🔍 ctaTextEl:', ctaTextEl, '| value:', data.cta_text);
         if (ctaTextEl && data.cta_text) {
             ctaTextEl.textContent = data.cta_text;
         }
 
+        // Email
         const emailEl = document.querySelector('#contact .btn-corporate');
+        console.log('🔍 emailEl:', emailEl, '| value:', data.email);
         if (emailEl && data.email) {
             emailEl.innerHTML = `<i class="fas fa-envelope me-2"></i> ${data.email}`;
             emailEl.href = `mailto:${data.email}`;
         }
 
+        // Message
         const messageEl = document.querySelector('#contact .text-muted');
+        console.log('🔍 messageEl:', messageEl, '| value:', data.message);
         if (messageEl && data.message) {
             messageEl.textContent = data.message;
         }
