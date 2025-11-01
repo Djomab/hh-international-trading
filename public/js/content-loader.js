@@ -38,12 +38,7 @@ class ContentLoader {
         value = value.replace(/\\n/g, '\n');
         
         data[key] = value;
-        
-        // 🔍 DEBUG
-        console.log(`  ✓ ${key}: "${value}"`);
     });
-
-        console.log('📦 Données parsées:', data);
         return { data, content: body };
     }
 
@@ -104,36 +99,32 @@ class ContentLoader {
     }
 
     // Charge Hero
-    // Charge Hero
-async loadHero() {
-    const hero = await this.loadMarkdown('/content/hero.md');
-    if (!hero) return;
+    async loadHero() {
+        const hero = await this.loadMarkdown('/content/hero.md');
+        if (!hero) return;
 
-    const { data, content } = hero;  // ⭐ Récupère aussi content (le body)
-    
-    const titleEl = document.querySelector('.hero h1');
-    if (titleEl && data.title) {
-        titleEl.textContent = data.title;
+        const { data } = hero;
+        
+        const titleEl = document.querySelector('.hero h1');
+        if (titleEl && data.title) {
+            titleEl.textContent = data.title;
+        }
+
+        const subtitleEl = document.querySelector('.hero .tagline');
+        if (subtitleEl && data.subtitle) {
+            subtitleEl.textContent = data.subtitle;
+        }
+
+        const contentEl = document.querySelector('.hero-text');
+        if (contentEl && data.welcome_text) {
+            contentEl.innerHTML = this.markdownToHtml(data.welcome_text);
+        }
+
+        const buttonEl = document.querySelector('.hero .btn-corporate');
+        if (buttonEl && data.button_text) {
+            buttonEl.innerHTML = `${data.button_text} <i class="fas fa-arrow-right ms-2"></i>`;
+        }
     }
-
-    const subtitleEl = document.querySelector('.hero .tagline');
-    if (subtitleEl && data.subtitle) {
-        subtitleEl.textContent = data.subtitle;
-    }
-
-    // ⭐ Utilise content au lieu de data.welcome_text
-    const contentEl = document.querySelector('.hero-text');
-    if (contentEl && content) {
-        contentEl.innerHTML = this.markdownToHtml(content);
-    }
-
-    const buttonEl = document.querySelector('.hero .btn-corporate');
-    if (buttonEl && data.button_text) {
-        buttonEl.innerHTML = `${data.button_text} <i class="fas fa-arrow-right ms-2"></i>`;
-    }
-
-    console.log('✅ Hero chargé');
-}
 
     // Charge About
     /*async loadAbout() {
@@ -172,7 +163,6 @@ async loadHero() {
             quoteEl.textContent = `"${data.quote}"`;
         }
 
-        console.log('✅ About chargé');
     }*/
 
     // Charge About
@@ -217,8 +207,6 @@ async loadHero() {
         if (imageContainer && data.image) {
             imageContainer.innerHTML = `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">`;
         }
-
-        console.log('✅ About chargé');
     }
 
     // Charge Stats
@@ -251,8 +239,6 @@ async loadHero() {
         const stat4Label = document.querySelector('.stats-section .stat-item:nth-child(4) .stat-label');
         if (stat4Num && data.stat4_number) stat4Num.textContent = data.stat4_number;
         if (stat4Label && data.stat4_label) stat4Label.textContent = data.stat4_label;
-
-        console.log('✅ Stats chargées');
     }
 
     // Charge Solutions
@@ -285,8 +271,6 @@ async loadHero() {
 
         solutions.sort((a, b) => (parseInt(a.order) || 999) - (parseInt(b.order) || 999));
         this.renderSolutions(solutions);
-        
-        console.log(`✅ ${solutions.length} solutions chargées`);
     }
 
     // Génère le HTML des solutions
@@ -315,7 +299,6 @@ async loadHero() {
         const html = this.markdownToHtml(solution.content || '');
 
         // 🔍 DEBUG (optionnel, tu peux l'enlever après)
-        console.log('🖼️ Solution:', title, '| Image:', image);
 
         // ⭐ AFFICHE L'IMAGE SI ELLE EXISTE, SINON L'ICÔNE
         const visualContent = image 
@@ -344,7 +327,6 @@ async loadHero() {
 
     // Charge Contact
     async loadContact() {
-        console.log('📥 Chargement Contact...');
         const contact = await this.loadMarkdown('/content/contact.md');
         
         if (!contact) {
@@ -353,39 +335,33 @@ async loadHero() {
         }
 
         const { data } = contact;
-        console.log('📦 Contact data:', data);
 
         // Titre
         const titleEl = document.querySelector('#contact .section-title h2');
-        console.log('🔍 titleEl:', titleEl, '| value:', data.title);
         if (titleEl && data.title) {
             titleEl.textContent = data.title;
         }
 
         // Sous-titre
         const subtitleEl = document.querySelector('#contact .section-title p');
-        console.log('🔍 subtitleEl:', subtitleEl, '| value:', data.subtitle);
         if (subtitleEl && data.subtitle) {
             subtitleEl.textContent = data.subtitle;
         }
 
         // Titre CTA
         const ctaTitleEl = document.querySelector('#contact .solution-card h3');
-        console.log('🔍 ctaTitleEl:', ctaTitleEl, '| value:', data.cta_title);
         if (ctaTitleEl && data.cta_title) {
             ctaTitleEl.textContent = data.cta_title;
         }
 
         // Texte CTA
         const ctaTextEl = document.querySelector('#contact .solution-card > p:first-of-type');
-        console.log('🔍 ctaTextEl:', ctaTextEl, '| value:', data.cta_text);
         if (ctaTextEl && data.cta_text) {
             ctaTextEl.textContent = data.cta_text;
         }
 
         // Email
         const emailEl = document.querySelector('#contact .btn-corporate');
-        console.log('🔍 emailEl:', emailEl, '| value:', data.email);
         if (emailEl && data.email) {
             emailEl.innerHTML = `<i class="fas fa-envelope me-2"></i> ${data.email}`;
             emailEl.href = `mailto:${data.email}`;
@@ -393,12 +369,9 @@ async loadHero() {
 
         // Message
         const messageEl = document.querySelector('#contact .text-muted');
-        console.log('🔍 messageEl:', messageEl, '| value:', data.message);
         if (messageEl && data.message) {
             messageEl.textContent = data.message;
         }
-
-        console.log('✅ Contact chargé');
     }
 
     // Charge Footer
@@ -432,13 +405,10 @@ async loadHero() {
         if (copyrightEl && data.copyright) {
             copyrightEl.textContent = `© ${data.copyright}`;
         }
-
-        console.log('✅ Footer chargé');
     }
 
     // Initialise tout le contenu dynamique
     async init() {
-        console.log('🚀 Chargement du contenu dynamique...');
         
         await this.loadHero();
         await this.loadAbout();
@@ -446,8 +416,6 @@ async loadHero() {
         await this.loadSolutions();
         await this.loadContact();
         await this.loadFooter();
-        
-        console.log('✅ Tout le contenu est chargé !');
     }
 }
 
