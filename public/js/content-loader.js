@@ -5,42 +5,43 @@ class ContentLoader {
     }
 
   // Parse le front matter YAML
-    parseFrontMatter(content) {
-        const regex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
-        const match = content.match(regex);
+  parseFrontMatter(content) {
+    // Regex qui accepte avec ou sans contenu après le front matter
+    const regex = /^---\n([\s\S]*?)\n---\s*([\s\S]*)$/;
+    const match = content.match(regex);
+    
+    if (!match) {
+        console.warn('⚠️ Pas de front matter trouvé');
+        return { data: {}, content: content };
+    }
+
+    const frontMatterText = match[1];
+    const body = match[2] || '';  // Body peut être vide ou undefined
+    const data = {};
+
+    frontMatterText.split('\n').forEach(line => {
+        if (!line.trim()) return;
         
-        if (!match) {
-            console.warn('⚠️ Pas de front matter trouvé');
-            return { data: {}, content: content };
+        const colonIndex = line.indexOf(':');
+        if (colonIndex === -1) return;
+        
+        const key = line.substring(0, colonIndex).trim();
+        let value = line.substring(colonIndex + 1).trim();
+        
+        // Enlever les guillemets
+        if ((value.startsWith('"') && value.endsWith('"')) || 
+            (value.startsWith("'") && value.endsWith("'"))) {
+            value = value.slice(1, -1);
         }
-
-        const frontMatterText = match[1];
-        const body = match[2];
-        const data = {};
-
-        frontMatterText.split('\n').forEach(line => {
-            if (!line.trim()) return;
-            
-            const colonIndex = line.indexOf(':');
-            if (colonIndex === -1) return;
-            
-            const key = line.substring(0, colonIndex).trim();
-            let value = line.substring(colonIndex + 1).trim();
-            
-            // Enlever les guillemets
-            if ((value.startsWith('"') && value.endsWith('"')) || 
-                (value.startsWith("'") && value.endsWith("'"))) {
-                value = value.slice(1, -1);
-            }
-            
-            // Remplacer \n par de vrais retours
-            value = value.replace(/\\n/g, '\n');
-            
-            data[key] = value;
-            
-            // 🔍 DEBUG
-            console.log(`  ✓ ${key}: "${value}"`);
-        });
+        
+        // Remplacer \n par de vrais retours
+        value = value.replace(/\\n/g, '\n');
+        
+        data[key] = value;
+        
+        // 🔍 DEBUG
+        console.log(`  ✓ ${key}: "${value}"`);
+    });
 
         console.log('📦 Données parsées:', data);
         return { data, content: body };
