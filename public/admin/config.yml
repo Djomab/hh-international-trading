@@ -19,7 +19,7 @@ collections:
         fields:
           - { label: "Titre", name: "title", widget: "string" }
           - { label: "Sous-titre", name: "subtitle", widget: "string" }
-          - { label: "Texte de bienvenue", name: "welcome_text", widget: "text" }
+          - { label: "Texte de bienvenue", name: "body", widget: "markdown" }  # ⭐ CHANGÉ
           - { label: "Texte du bouton", name: "button_text", widget: "string" }
 
 # About Section

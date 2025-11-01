@@ -104,34 +104,36 @@ class ContentLoader {
     }
 
     // Charge Hero
-    async loadHero() {
-        const hero = await this.loadMarkdown('/content/hero.md');
-        if (!hero) return;
+    // Charge Hero
+async loadHero() {
+    const hero = await this.loadMarkdown('/content/hero.md');
+    if (!hero) return;
 
-        const { data } = hero;
-        
-        const titleEl = document.querySelector('.hero h1');
-        if (titleEl && data.title) {
-            titleEl.textContent = data.title;
-        }
-
-        const subtitleEl = document.querySelector('.hero .tagline');
-        if (subtitleEl && data.subtitle) {
-            subtitleEl.textContent = data.subtitle;
-        }
-
-        const contentEl = document.querySelector('.hero-text');
-        if (contentEl && data.welcome_text) {
-            contentEl.innerHTML = this.markdownToHtml(data.welcome_text);
-        }
-
-        const buttonEl = document.querySelector('.hero .btn-corporate');
-        if (buttonEl && data.button_text) {
-            buttonEl.innerHTML = `${data.button_text} <i class="fas fa-arrow-right ms-2"></i>`;
-        }
-
-        console.log('✅ Hero chargé');
+    const { data, content } = hero;  // ⭐ Récupère aussi content (le body)
+    
+    const titleEl = document.querySelector('.hero h1');
+    if (titleEl && data.title) {
+        titleEl.textContent = data.title;
     }
+
+    const subtitleEl = document.querySelector('.hero .tagline');
+    if (subtitleEl && data.subtitle) {
+        subtitleEl.textContent = data.subtitle;
+    }
+
+    // ⭐ Utilise content au lieu de data.welcome_text
+    const contentEl = document.querySelector('.hero-text');
+    if (contentEl && content) {
+        contentEl.innerHTML = this.markdownToHtml(content);
+    }
+
+    const buttonEl = document.querySelector('.hero .btn-corporate');
+    if (buttonEl && data.button_text) {
+        buttonEl.innerHTML = `${data.button_text} <i class="fas fa-arrow-right ms-2"></i>`;
+    }
+
+    console.log('✅ Hero chargé');
+}
 
     // Charge About
     /*async loadAbout() {
